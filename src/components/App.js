@@ -15,7 +15,7 @@ const displayGreetings=(event)=>{
     <p>Enter your name:</p>
     
     <input type="text" value={name} onChange={displayGreetings}/> 
-    {name ? <p> 'Hello{name}!'</p> : null}
+    {name ? <p>Hello {name}!'</p> : null}
     
     {/* samething using and operator */}
   {/* {name && <p>Hello {name}!</p>}   */}
