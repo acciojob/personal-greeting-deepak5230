@@ -1,31 +1,28 @@
 
+
 import React,{useState} from "react";
 import './../styles/App.css';
 
-
-const Greeting = () => {
-  const [name, setName] = useState('');
-  const [greeting, setGreeting] = useState('');
-
-  const handleInputChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleButtonClick = () => {
-    setGreeting(`Hello, ${name}!`);
-  };
+const App = () => {
+let [name,setName]=useState('');
+const displayGreetings=(event)=>{
+  setName(event.target.value);
+}
 
 
   return (
     <div>
-<input
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={handleInputChange}
-      />
-      <button onClick={handleButtonClick}>Greet Me</button>
-      {greeting && <h2>{greeting}</h2>}
+        {/* Do not remove the main div */}
+    <p></p>
+    <input type="text" value={name} onChange={displayGreetings}/> 
+    {name ? <p>Hello {name}!</p> : null}
+    
+    {/* samething using and operator */}
+  {/* {name && <p>Hello {name}!</p>}   */}
+
+
+{/* gpt solution not currect */}
+    {/* {submittedName ? <h1>Hello, {submittedName}!</h1> : null} */}
     </div>
   )
 }
